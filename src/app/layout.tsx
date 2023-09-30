@@ -60,7 +60,12 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={cn("mx-auto max-w-xl antialiased", fontSans.className)}>
+      <body
+        className={cn(
+          "bg-[url('/images/noise.png')] antialiased",
+          fontSans.className
+        )}
+      >
         <Providers>{children}</Providers>
 
         <TailwindIndicator />

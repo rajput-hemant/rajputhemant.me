@@ -65,6 +65,14 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        hero: {
+          from: {
+            "stroke-dashoffset": 0,
+          },
+          to: {
+            "stroke-dashoffset": 12433.8193359375,
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

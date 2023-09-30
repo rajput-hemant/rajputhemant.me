@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
@@ -11,21 +10,12 @@ type Props = {
 };
 
 const ThemeToggle = ({ className }: Props) => {
-  const [hasMounted, setHasMounted] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  useEffect(() => setHasMounted(true), []);
-
   function toggleTheme() {
-    return currentTheme === "light" ? setTheme("dark") : setTheme("light");
-  }
-
-  if (!hasMounted) {
-    return (
-      <span className="h-10 w-10 rounded-full border border-border"></span>
-    );
+    setTheme(currentTheme === "light" ? "dark" : "light");
   }
 
   return (

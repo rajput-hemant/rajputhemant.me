@@ -31,7 +31,7 @@ const services = [
   {
     title: "Mobile App Redefined",
     description:
-      "Crafting immersive mobile apps that come to life with the magic of Flutter& React Native.",
+      "Crafting immersive mobile apps that come to life with the magic of Flutter & React Native.",
     icon: "/images/ic-appdev.webp",
   },
 ];
@@ -42,24 +42,25 @@ const Page = () => {
 
   const handleEmailClick = (email: string) => {
     navigator.clipboard.writeText(email);
-
     setIsCopied(true);
   };
 
   if (!isMounted) {
     return (
       <div className="grid h-screen place-items-center">
-        <span className="h-32 w-32 animate-spin rounded-full border-y-2 border-green-300"></span>
+        <span className="h-24 w-24 animate-spin rounded-full border-y-2 border-green-300 md:h-32 md:w-32" />
       </div>
     );
   }
 
   return (
-    <div className="mb-2 space-y-6 p-6 duration-500 animate-in slide-in-from-top-1/2">
+    <div className="mx-auto mb-2 max-w-xl space-y-6 p-6 duration-500 animate-in slide-in-from-top-1/2">
+      <div className="flex justify-end">
+        <ThemeToggle />
+      </div>
+
       {/* hero */}
       <header className="flex flex-col items-center justify-center gap-6 duration-1000 animate-in slide-in-from-bottom-full">
-        <ThemeToggle className="ml-auto" />
-
         <div className="overflow-hidden rounded-full border-2 shadow-inner">
           <Image
             src="/images/rajput-hemant.png"
@@ -107,10 +108,10 @@ const Page = () => {
         {/* portfolio website link */}
         <div className="flex flex-col items-center justify-center gap-3 py-3 md:flex-row">
           <a
-            href="#"
+            href="/portfolio"
             className={cn(
-              buttonVariants({ size: "lg", variant: "secondary" }),
-              "group gap-x-1 transition-all duration-300 hover:gap-x-2 hover:shadow"
+              buttonVariants({ size: "lg", variant: "outline" }),
+              "group gap-x-1 rounded-xl transition-all duration-300 hover:gap-x-2 hover:shadow"
             )}
           >
             <Rocket className="h-5 transition-transform duration-700 group-hover:translate-x-36 group-hover:rotate-45" />
@@ -180,7 +181,7 @@ const Page = () => {
               {isCopied ? (
                 <ClipboardCheck className="-my-3 -mr-2 h-6 w-6" />
               ) : (
-                <Clipboard className="invisible -my-3 -mr-2 h-6 w-6 group-hover:visible" />
+                <Clipboard className="-my-3 -mr-2 h-6 w-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               )}
             </div>
 
@@ -191,7 +192,7 @@ const Page = () => {
 
           <CardContent className="space-y-3">
             <div className="flex items-center gap-2 text-lg">
-              <span className="group-hover:underline">
+              <span className="underline-offset-8 group-hover:underline">
                 rajput.hemant2001@gmail.com
               </span>
 

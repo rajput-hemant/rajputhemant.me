@@ -1,5 +1,7 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
 
+import { Icons } from "@/components/icons";
+
 export const siteConfig = {
   name: "Hemant Rajput | Software Developer",
   description:
@@ -21,6 +23,11 @@ export const siteConfig = {
       title: "Twitter",
       href: "https://twitter.com/rajput_hemant01",
       icon: Twitter,
+    },
+    {
+      title: "Stackoverflow",
+      href: "https://stackoverflow.com/users/20652038/rajput-hemant",
+      icon: Icons.StackOverFlow,
     },
   ],
 };
