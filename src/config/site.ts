@@ -1,5 +1,3 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
-
 import { Icons } from "@/components/icons";
 
 export const siteConfig = {
@@ -13,17 +11,17 @@ export const siteConfig = {
     {
       title: "Github",
       href: "https://github.com/rajput-hemant",
-      icon: Github,
+      icon: Icons.Github,
     },
     {
       title: "Linkedin",
       href: "https://www.linkedin.com/in/rajput-hemant",
-      icon: Linkedin,
+      icon: Icons.LinkedIn,
     },
     {
       title: "Twitter",
       href: "https://twitter.com/rajput_hemant01",
-      icon: Twitter,
+      icon: Icons.Twitter,
     },
     {
       title: "Stackoverflow",

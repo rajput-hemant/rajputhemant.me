@@ -42,12 +42,16 @@ export default function Contact() {
         </CardHeader>
 
         <CardContent className="space-y-3">
-          <div className="flex items-center gap-2 text-lg">
+          <div className="flex flex-col text-lg md:flex-row md:items-center md:gap-2">
             <span className="underline-offset-8 group-hover:underline">
               {siteConfig.mail}
             </span>
 
-            {isCopied && "(Copied!)"}
+            {isCopied && (
+              <span className="duration-500 animate-in slide-in-from-right-full">
+                (Copied!)
+              </span>
+            )}
           </div>
 
           <p className="text-sm leading-relaxed md:text-base">

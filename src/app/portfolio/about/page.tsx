@@ -46,15 +46,15 @@ export default function About() {
           </div>
         </div>
 
-        <aside className="order-none mb-12 flex flex-col gap-y-8 justify-self-start lg:order-1 lg:justify-self-center">
+        <aside className="order-none mb-12 flex flex-col gap-y-8 lg:order-1">
           <div className="sticky top-10 duration-700 animate-in zoom-in-50">
-            <div className="mb-4 overflow-hidden rounded-full border">
+            <div className="mb-4 w-80 overflow-hidden rounded-full border md:w-full">
               <Image
                 src="/images/rajput-hemant.png"
                 width={400}
                 height={400}
                 quality={100}
-                alt={""}
+                alt="Hemant Rajput"
                 priority
                 className="scale-105 object-cover duration-300 hover:scale-110"
               />
@@ -90,7 +90,7 @@ export default function About() {
                       duration: 2000,
                     });
                   }}
-                  className="flex basis-[10%] items-center justify-center rounded-md border bg-secondary/50 py-3 text-center text-lg hover:underline"
+                  className="flex basis-[15%] items-center justify-center rounded-md border bg-secondary/50 py-3 text-center text-lg hover:underline md:basis-[10%]"
                 >
                   <Download
                     aria-label="Download Resume"
@@ -101,7 +101,7 @@ export default function About() {
 
               <a
                 href={`mailto:${siteConfig.mail}`}
-                className="hover:text-primary-color flex items-center gap-x-2 text-green-600 dark:text-green-300/75"
+                className="hover:text-primary-color flex items-center justify-center gap-x-2 text-green-600 dark:text-green-300/75"
               >
                 <Mail className="h-5 w-5" />
 
@@ -112,42 +112,65 @@ export default function About() {
         </aside>
       </section>
 
-      {/* <Usage /> */}
-      <section className="mt-20 max-w-2xl">
+      {/* Setup */}
+      <section className="mt-10 max-w-xl">
+        <h2 className="mb-8 text-4xl font-bold tracking-tight">Setup</h2>
+
+        <div className="flex flex-col gap-2 duration-500 animate-in zoom-in-50">
+          <Image
+            src="/images/setup.jpg"
+            height={400}
+            width={400}
+            quality={100}
+            alt="Future Setup"
+            className="w-full rounded-md object-cover"
+          />
+
+          <span className="text-center text-foreground/50">
+            Setup I plan to build one day
+          </span>
+        </div>
+      </section>
+
+      {/* Usage  */}
+      <section className="mt-10 max-w-2xl">
         <div className="mb-8">
           <h2 className="mb-4 text-4xl font-bold tracking-tight">Usage</h2>
 
-          <p className="max-w-xl text-zinc-600 dark:text-zinc-400">
+          <p className="max-w-xl text-foreground/60">
             Tools, technologies and gadgets I use on a daily basis but not
             limited to.
           </p>
         </div>
 
-        {tools.map(({ heading, items }) => (
-          <div className="my-4">
+        {tools.map(({ heading, items }, i) => (
+          <div key={i} className="my-4">
             <h3 className="text-2xl font-semibold">{heading}</h3>
 
-            {items.map(({ name, url, description, icon }, i) => (
+            {items.map(({ name, url, description, icon: Icon }, i) => (
               <li key={i} className="flex items-center gap-x-2 p-2">
-                {icon}
+                <Icon className="h-5 w-5" />
                 <a
                   href={url}
                   rel="noreferrer noopener"
                   target="_blank"
                   aria-label={name}
-                  className="my-auto truncate leading-3 underline-offset-4 duration-500 animate-in slide-in-from-right-full hover:underline"
+                  className="my-auto min-w-fit leading-3 text-blue-500 underline underline-offset-4 duration-500 animate-in zoom-in-50 hover:underline dark:text-blue-400"
                 >
                   {name}
                 </a>
-                -<span className="text-foreground/60">{description}</span>
+                -
+                <span className="truncate text-foreground/60 duration-500 animate-in zoom-in-50">
+                  {description}
+                </span>
               </li>
             ))}
           </div>
         ))}
       </section>
 
-      {/* <Heroes /> */}
-      <section className="mt-20 max-w-5xl">
+      {/* Heroes  */}
+      <section className="mt-10 max-w-5xl">
         <h2 className="mb-4 text-4xl font-bold tracking-tight">Heroes</h2>
 
         <p className="max-w-2xl text-foreground/60">

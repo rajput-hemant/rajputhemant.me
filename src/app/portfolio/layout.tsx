@@ -10,7 +10,7 @@ const PortfolioLayout = ({ children }: Props) => {
     <>
       <Navbar />
 
-      <main className="min-h-[calc(100vh-10rem)] font-incognito md:min-h-[calc(100vh-8rem)]">
+      <main className="mt-10 min-h-[calc(100vh-10rem)] font-incognito md:mt-16 md:min-h-[calc(100vh-8rem)]">
         {children}
       </main>
 

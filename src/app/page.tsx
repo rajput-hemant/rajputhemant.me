@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Laptop, Rocket } from "lucide-react";
 
+import { services } from "@/config/constants";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import Contact from "@/components/contact";
@@ -10,21 +11,6 @@ import ThemeToggle from "@/components/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-
-const services = [
-  {
-    title: "Innovative Web Solutions",
-    description:
-      "Transforming your ideas into captivating websites using powerful technologies.",
-    icon: "/images/ic-webdev.webp",
-  },
-  {
-    title: "Mobile App Redefined",
-    description:
-      "Crafting immersive mobile apps that come to life with the magic of Flutter & React Native.",
-    icon: "/images/ic-appdev.webp",
-  },
-];
 
 export default function Page() {
   return (
@@ -102,7 +88,7 @@ export default function Page() {
       {/* services */}
       <div className="space-y-5">
         <div className="flex items-center gap-2 px-3">
-          <Laptop size={24} />
+          <Laptop className="h-5 w-5" />
           <h2 className="text-lg font-medium md:text-xl">Services</h2>
         </div>
 

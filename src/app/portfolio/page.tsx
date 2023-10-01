@@ -6,7 +6,7 @@ import { Icons } from "@/components/icons";
 
 const PortfolioPage = () => {
   return (
-    <main className="mx-auto max-w-7xl px-6 md:px-16 lg:mt-16">
+    <main className="mx-auto max-w-7xl px-6 md:px-16">
       {/* hero */}
       <section className="flex flex-col items-start justify-between gap-x-12 xl:flex-row xl:items-center xl:justify-center">
         <div className="max-w-2xl duration-700 animate-in slide-in-from-top-full lg:max-w-2xl">

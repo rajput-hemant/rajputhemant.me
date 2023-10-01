@@ -1,11 +1,12 @@
 import React from "react";
+import type { LucideIcon } from "lucide-react";
 
 export type Tool = {
   heading: string;
   items: {
     name: string;
-    url?: string;
     description: string;
-    icon?: React.JSX.Element;
+    url: string;
+    icon: React.ComponentType<{ className?: string }> | LucideIcon;
   }[];
 };
