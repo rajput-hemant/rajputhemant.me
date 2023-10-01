@@ -1,24 +1,14 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import {
-  Clipboard,
-  ClipboardCheck,
-  Contact,
-  Laptop,
-  MailOpen,
-  Rocket,
-} from "lucide-react";
+import { Laptop, Rocket } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { useIsMounted } from "@/hooks/is-mounted";
+import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import { Icons } from "@/components/icons";
 import ThemeToggle from "@/components/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 const services = [
@@ -36,25 +26,9 @@ const services = [
   },
 ];
 
-const Page = () => {
-  const [isCopied, setIsCopied] = useState(false);
-  const isMounted = useIsMounted();
-
-  const handleEmailClick = (email: string) => {
-    navigator.clipboard.writeText(email);
-    setIsCopied(true);
-  };
-
-  if (!isMounted) {
-    return (
-      <div className="grid h-screen place-items-center">
-        <span className="h-24 w-24 animate-spin rounded-full border-y-2 border-green-300 md:h-32 md:w-32" />
-      </div>
-    );
-  }
-
+export default function Page() {
   return (
-    <div className="mx-auto mb-2 max-w-xl space-y-6 p-6 duration-500 animate-in slide-in-from-top-1/2">
+    <div className="mx-auto mb-2 max-w-xl space-y-6 p-6 font-sans duration-500 animate-in slide-in-from-top-1/2">
       <div className="flex justify-end">
         <ThemeToggle />
       </div>
@@ -161,57 +135,11 @@ const Page = () => {
 
       <Separator />
 
-      {/* contact */}
-      <div className="space-y-4">
-        <div className="flex items-center gap-2 px-3">
-          <Contact size={24} />
-
-          <h2 className="text-lg font-medium md:text-xl">Get in Touch</h2>
-        </div>
-
-        <Card
-          className="group cursor-pointer rounded-2xl bg-emerald-200 bg-right bg-no-repeat p-2 text-black transition-all duration-1000 animate-in slide-in-from-bottom-full"
-          style={{ backgroundImage: "url('/images/bg-gradient-2.svg')" }}
-          onClick={() => handleEmailClick("rajput.hemant2001@gmail.com")}
-        >
-          <CardHeader className="space-y-3">
-            <div className="flex justify-between">
-              <MailOpen />
-
-              {isCopied ? (
-                <ClipboardCheck className="-my-3 -mr-2 h-6 w-6" />
-              ) : (
-                <Clipboard className="-my-3 -mr-2 h-6 w-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              )}
-            </div>
-
-            <div className="text-lg font-medium md:text-xl">
-              Drop Me an Email
-            </div>
-          </CardHeader>
-
-          <CardContent className="space-y-3">
-            <div className="flex items-center gap-2 text-lg">
-              <span className="underline-offset-8 group-hover:underline">
-                rajput.hemant2001@gmail.com
-              </span>
-
-              {isCopied && "(Copied!)"}
-            </div>
-
-            <p className="text-sm leading-relaxed md:text-base">
-              Expect my rapid and eager reply - your message won&apos;t be kept
-              waiting!
-            </p>
-          </CardContent>
-        </Card>
-      </div>
+      <Contact />
 
       <Separator />
 
       <Footer />
     </div>
   );
-};
-
-export default Page;
+}

@@ -3,6 +3,8 @@
 import { ThemeProvider } from "next-themes";
 import type { ThemeProviderProps } from "next-themes/dist/types";
 
+import { Toaster } from "./ui/toaster";
+
 type Props = {
   theme?: ThemeProviderProps;
   children: React.ReactNode;
@@ -18,6 +20,8 @@ export function Providers({ children, theme }: Props) {
       {...theme}
     >
       {children}
+
+      <Toaster />
     </ThemeProvider>
   );
 }

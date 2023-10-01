@@ -1,4 +1,3 @@
-import { incognito } from "@/lib/fonts";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
@@ -8,13 +7,15 @@ type Props = {
 
 const PortfolioLayout = ({ children }: Props) => {
   return (
-    <div className={incognito.className}>
+    <>
       <Navbar />
 
-      {children}
+      <main className="min-h-[calc(100vh-10rem)] font-incognito md:min-h-[calc(100vh-8rem)]">
+        {children}
+      </main>
 
-      <Footer absolute />
-    </div>
+      <Footer />
+    </>
   );
 };
 

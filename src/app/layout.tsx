@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/lib/fonts";
+import { fontSans, incognito, poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
@@ -62,8 +62,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body
         className={cn(
-          "bg-[url('/images/noise.png')] antialiased",
-          fontSans.className
+          "min-h-screen bg-[url('/images/noise.png')]",
+          fontSans.variable,
+          poppins.variable,
+          incognito.variable
         )}
       >
         <Providers>{children}</Providers>

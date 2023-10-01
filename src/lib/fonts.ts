@@ -37,7 +37,7 @@ export const poppins = Poppins({
  * -----------------------------------------------------------------------------------------------*/
 
 export const incognito = localFont({
-  variable: "--incognito",
+  variable: "--font-incognito",
   display: "swap",
   src: [
     {

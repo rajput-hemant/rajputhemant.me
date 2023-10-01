@@ -7,6 +7,7 @@ export const siteConfig = {
   description:
     "Hemant Rajput is a Software Developer who is passionate about building solutions and contributing to open source communities",
   url: "https://rajputhemant.me",
+  mail: "rajput.hemant2001@gmail.com",
 
   links: [
     {
