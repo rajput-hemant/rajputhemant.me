@@ -23,7 +23,7 @@ export default function Page() {
       <header className="flex flex-col items-center justify-center gap-6 duration-1000 animate-in slide-in-from-bottom-full">
         <div className="overflow-hidden rounded-full border-2 shadow-inner">
           <Image
-            src="/images/rajput-hemant.png"
+            src="/images/avatar.png"
             alt="Hemant Rajput"
             width={100}
             height={100}
@@ -33,36 +33,37 @@ export default function Page() {
 
         <div className="flex flex-col items-center justify-center space-y-3">
           <div className="flex items-center gap-2 text-center">
-            <h1 className="text-2xl font-medium">Hemant Rajput</h1>
+            <h1 className="text-2xl font-medium">{siteConfig.author.name}</h1>
 
             <Icons.Verified />
           </div>
 
           <p className="mx-1 text-center leading-relaxed md:text-base">
-            Seasoned software engineer especially in frontend side, with a
-            passion for creating pixel-perfect web experiences.
+            {siteConfig.author.description}
           </p>
         </div>
 
         {/* socials */}
         <div className="flex justify-center gap-x-3">
-          {siteConfig.links.map(({ title, href, icon: Icon }) => {
-            return (
-              <a
-                key={title}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={title}
-                className={cn(
-                  buttonVariants({ variant: "outline" }),
-                  "h-12 w-12 rounded-full p-3 transition-all duration-300 hover:scale-105 hover:shadow"
-                )}
-              >
-                <Icon />
-              </a>
-            );
-          })}
+          {Object.values(siteConfig.links).map(
+            ({ title, href, icon: Icon }) => {
+              return (
+                <a
+                  key={title}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={title}
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "h-12 w-12 rounded-full p-3 transition-all duration-300 hover:scale-105 hover:shadow"
+                  )}
+                >
+                  <Icon />
+                </a>
+              );
+            }
+          )}
         </div>
 
         {/* portfolio website link */}

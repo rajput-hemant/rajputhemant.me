@@ -10,7 +10,7 @@ export default function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between">
         <Link href="/">
           <Image
-            src="/images/rajput-hemant.png"
+            src="/images/avatar.png"
             width={40}
             height={40}
             alt="logo"

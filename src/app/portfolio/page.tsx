@@ -16,30 +16,32 @@ const PortfolioPage = () => {
           </h1>
 
           <p className="text-base leading-relaxed text-foreground/60">
-            I&apos;m Hemant Rajput, an experienced frontend developer passionate
-            about learning and building open-source software that is beneficial
-            to developers and the world at large.
+            I&apos;m {siteConfig.author.name}, an experienced frontend developer
+            passionate about learning and building open-source software that is
+            beneficial to developers and the world at large.
           </p>
 
           {/* socials */}
           <ul className="my-10 flex flex-wrap items-center gap-x-5 gap-y-4 duration-700 animate-in slide-in-from-bottom-full">
-            {siteConfig.links.map(({ title, href, icon: Icon }, i) => (
-              <li key={i}>
-                <a
-                  href={href}
-                  rel="noreferer noopener"
-                  target="_blank"
-                  className="group flex items-center border-b border-border"
-                >
-                  <Icon
-                    className="h-4 w-4 shrink-0 text-foreground/60 duration-300 group-hover:text-foreground"
-                    aria-hidden="true"
-                  />
-                  &nbsp;
-                  {title}
-                </a>
-              </li>
-            ))}
+            {Object.values(siteConfig.links).map(
+              ({ title, href, icon: Icon }, i) => (
+                <li key={i}>
+                  <a
+                    href={href}
+                    rel="noreferer noopener"
+                    target="_blank"
+                    className="group flex items-center border-b border-border"
+                  >
+                    <Icon
+                      className="h-4 w-4 shrink-0 text-foreground/60 duration-300 group-hover:text-foreground"
+                      aria-hidden="true"
+                    />
+                    &nbsp;
+                    {title}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
 

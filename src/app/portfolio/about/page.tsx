@@ -1,28 +1,25 @@
-"use client";
-
-// import { Metadata } from "next";
+import { Metadata } from "next";
 import Image from "next/image";
-import { Download, Link, Mail, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 
 import { heroes, tools } from "@/config/constants";
 import { siteConfig } from "@/config/site";
 import { cn, shuffle } from "@/lib/utils";
-import EasterEgg from "@/components/easter-egg";
-import { useToast } from "@/components/ui/use-toast";
+import EasterEgg from "./easter-egg";
+import AboutSidebar from "./sidebar";
 
-// export const metadata: Metadata = {
-//   title: "About | Hemant Rajput",
-// };
+export const metadata: Metadata = {
+  title: "About | Hemant Rajput",
+};
 
 export default function About() {
-  const { toast } = useToast();
-
   return (
     <main className="relative mx-auto max-w-3xl px-6 md:px-16 lg:mt-28 lg:max-w-7xl">
       <section className="relative grid grid-cols-1 justify-items-center gap-x-6 lg:grid-cols-2">
         <div className="order-2 duration-700 animate-in slide-in-from-top-full lg:order-none">
           <h1 className="mb-8 basis-1/2 text-3xl font-black tracking-tight sm:text-5xl lg:leading-tight">
-            I&apos;m Hemant Rajput. I live in Mathura, where I build the future.
+            I&apos;m {siteConfig.author.name}. I live in Mathura, where I build
+            the future.
           </h1>
 
           <div className="font-sans leading-relaxed text-foreground/60">
@@ -35,7 +32,7 @@ export default function About() {
             development skills.
             <blockquote className="relative my-8 overflow-hidden rounded-md border bg-secondary/50 p-4 pr-12 tracking-tight lg:py-6 lg:pl-6">
               <Quote
-                className="absolute -right-4 -top-6 -z-10 h-24 w-24 -rotate-12 text-secondary"
+                className="absolute -right-4 -top-6 -z-10 h-24 w-24 -rotate-12 text-secondary duration-1000 animate-in slide-in-from-left-full"
                 aria-hidden="true"
               />
               If you ever spot me in the wild, don&apos;t hesitate to say hello!
@@ -46,70 +43,7 @@ export default function About() {
           </div>
         </div>
 
-        <aside className="order-none mb-12 flex flex-col gap-y-8 lg:order-1">
-          <div className="sticky top-10 duration-700 animate-in zoom-in-50">
-            <div className="mb-4 w-80 overflow-hidden rounded-full border md:w-full">
-              <Image
-                src="/images/rajput-hemant.png"
-                width={400}
-                height={400}
-                quality={100}
-                alt="Hemant Rajput"
-                priority
-                className="scale-105 object-cover duration-300 hover:scale-110"
-              />
-            </div>
-
-            <div className="flex cursor-pointer flex-col gap-y-4 text-center">
-              <div
-                onClick={() => {
-                  toast({
-                    title: "Coming soon!",
-                    description: "This feature is still under development.",
-                    duration: 2000,
-                  });
-                }}
-                className="flex items-center gap-x-3"
-              >
-                <a
-                  // href="#"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="flex basis-[90%] items-center justify-center gap-x-2 rounded-md border bg-secondary/50 py-2 text-center text-lg font-semibold"
-                >
-                  View Resume <Link className="h-4 w-4" />
-                </a>
-
-                <a
-                  // href="#"
-                  title="Download Resume"
-                  onClick={() => {
-                    toast({
-                      title: "Coming soon!",
-                      description: "This feature is still under development.",
-                      duration: 2000,
-                    });
-                  }}
-                  className="flex basis-[15%] items-center justify-center rounded-md border bg-secondary/50 py-3 text-center text-lg hover:underline md:basis-[10%]"
-                >
-                  <Download
-                    aria-label="Download Resume"
-                    className="h-5 w-5 text-green-600 dark:text-green-300"
-                  />
-                </a>
-              </div>
-
-              <a
-                href={`mailto:${siteConfig.mail}`}
-                className="hover:text-primary-color flex items-center justify-center gap-x-2 text-green-600 dark:text-green-300/75"
-              >
-                <Mail className="h-5 w-5" />
-
-                {siteConfig.mail}
-              </a>
-            </div>
-          </div>
-        </aside>
+        <AboutSidebar />
       </section>
 
       {/* Setup */}
@@ -149,7 +83,7 @@ export default function About() {
 
             {items.map(({ name, url, description, icon: Icon }, i) => (
               <li key={i} className="flex items-center gap-x-2 p-2">
-                <Icon className="h-5 w-5" />
+                <Icon className="h-5 min-h-fit w-5 min-w-fit" />
                 <a
                   href={url}
                   rel="noreferrer noopener"
@@ -170,7 +104,7 @@ export default function About() {
       </section>
 
       {/* Heroes  */}
-      <section className="mt-10 max-w-5xl">
+      <section className="my-10 max-w-5xl">
         <h2 className="mb-4 text-4xl font-bold tracking-tight">Heroes</h2>
 
         <p className="max-w-2xl text-foreground/60">
@@ -190,11 +124,11 @@ export default function About() {
           </strong>
         </p>
 
-        <ul className="mt-12 grid grid-cols-1 gap-6 tracking-tight md:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-12 grid grid-cols-1 gap-2 tracking-tight md:grid-cols-2 md:gap-4 lg:grid-cols-3">
           {shuffle(heroes).map(({ name, aka, met, url }, i) => (
             <li
               key={i}
-              className="flex items-center gap-x-2 rounded-md border bg-secondary/50 p-2"
+              className="flex items-center gap-x-2 rounded-md border bg-secondary/50 p-4"
             >
               <EasterEgg isMet={met} />
 

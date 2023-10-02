@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     // images: [siteConfig.ogImage],
-    creator: "@shadcn",
+    creator: siteConfig.links.twitter.href.split("/").pop(),
   },
   icons: {
     icon: "/favicon.ico",

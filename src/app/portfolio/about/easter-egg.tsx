@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
-import { Checkbox } from "./ui/checkbox";
+import { Checkbox } from "../../../components/ui/checkbox";
 
 export default function EasterEgg({ isMet }: { isMet: boolean }) {
   const [image, setImage] = useState(false);

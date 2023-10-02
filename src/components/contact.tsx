@@ -25,7 +25,7 @@ export default function Contact() {
       <Card
         className="group cursor-pointer rounded-2xl bg-emerald-200 bg-right bg-no-repeat p-2 text-black transition-all duration-1000 animate-in slide-in-from-bottom-full"
         style={{ backgroundImage: "url('/images/bg-gradient-2.svg')" }}
-        onClick={() => handleEmailClick(siteConfig.mail)}
+        onClick={() => handleEmailClick(siteConfig.author.mail)}
       >
         <CardHeader className="space-y-3">
           <div className="flex justify-between">
@@ -44,7 +44,7 @@ export default function Contact() {
         <CardContent className="space-y-3">
           <div className="flex flex-col text-lg md:flex-row md:items-center md:gap-2">
             <span className="underline-offset-8 group-hover:underline">
-              {siteConfig.mail}
+              {siteConfig.author.mail}
             </span>
 
             {isCopied && (

@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { title: "Home", href: "/portfolio" },
-  { title: "About", href: "/portfolio/about" },
-  { title: "Projects", href: "/portfolio/projects" },
+  { title: "home", href: "/portfolio" },
+  { title: "about", href: "/portfolio/about" },
+  { title: "projects", href: "/portfolio/projects" },
 ];
 
 const MainNav = () => {
@@ -21,7 +21,7 @@ const MainNav = () => {
           <Link
             href={href}
             className={cn(
-              "text-foreground/80 underline-offset-4 duration-300 hover:text-foreground",
+              "text-foreground/80 underline-offset-4 duration-300 hover:text-foreground hover:underline",
               pathname === href && "font-medium text-foreground underline"
             )}
           >
