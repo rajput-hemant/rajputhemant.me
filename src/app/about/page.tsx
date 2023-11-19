@@ -130,7 +130,7 @@ export default function About() {
               key={i}
               className="flex items-center gap-x-2 rounded-md border bg-secondary/50 p-4"
             >
-              <EasterEgg isMet={met} />
+              <EasterEgg hasMet={met} />
 
               <a
                 href={url}

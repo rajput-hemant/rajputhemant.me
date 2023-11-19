@@ -27,9 +27,15 @@ const NotFound = () => {
           and try again.
         </p>
 
-        <Link href="/" className={buttonVariants({ variant: "outline" })}>
-          Go back home
-        </Link>
+        <div className="flex gap-4">
+          <Link href="/" className={buttonVariants({ variant: "outline" })}>
+            Go back
+          </Link>
+
+          <Link href="/" className={buttonVariants({ variant: "outline" })}>
+            Go home
+          </Link>
+        </div>
       </header>
     </main>
   );

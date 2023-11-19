@@ -4,9 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
-import { Checkbox } from "../../../components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 
-export default function EasterEgg({ isMet }: { isMet: boolean }) {
+export default function EasterEgg({ hasMet }: { hasMet: boolean }) {
   const [image, setImage] = useState(false);
 
   const toggleImage = () => {
@@ -24,7 +24,7 @@ export default function EasterEgg({ isMet }: { isMet: boolean }) {
     <>
       <Checkbox
         onClick={toggleImage}
-        checked={isMet}
+        checked={hasMet}
         className="data-[state=checked]:bg-green-600 dark:dark:data-[state=checked]:border-green-300 dark:data-[state=checked]:border-green-600 dark:data-[state=checked]:bg-green-300"
       />
 

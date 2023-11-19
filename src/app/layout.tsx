@@ -3,8 +3,11 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans, incognito, poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { Separator } from "@/components/ui/separator";
 
 import "@/styles/globals.css";
 
@@ -68,7 +71,14 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           incognito.variable
         )}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navbar />
+          <main className="mt-10 min-h-[calc(100vh-11rem)] font-incognito md:mt-10 lg:mt-16 lg:min-h-[calc(100vh-12.5rem)]">
+            {children}
+          </main>
+          <Separator />
+          <Footer />{" "}
+        </Providers>
 
         <TailwindIndicator />
       </body>
