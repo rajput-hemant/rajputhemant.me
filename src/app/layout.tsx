@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       url: "https://rajputhemant.me",
     },
   ],
-  creator: "shadcn",
+  creator: "rajput-hemant",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -77,7 +77,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             {children}
           </main>
           <Separator />
-          <Footer />{" "}
+          <Footer />
         </Providers>
 
         <TailwindIndicator />
